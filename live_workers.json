@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "online_workers": 1,
+  "online_workers": 2,
   "studio_url": "https://spare-strange-club-within.trycloudflare.com",
   "tts_url": "https://thesaurus-returning-healing-eat.trycloudflare.com",
   "gpu_name": "NVIDIA L4",
@@ -13,8 +13,17 @@
       "gpu_name": "NVIDIA L4",
       "tier": "pro",
       "studio_enabled": true,
-      "last_heartbeat": 1795019147
+      "last_heartbeat": 1795019102
+    },
+    {
+      "worker_id": "w_colab_001",
+      "studio_url": "https://byte-problems-basically-oakland.trycloudflare.com",
+      "tts_url": "https://benz-regression-seller-tone.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "free",
+      "studio_enabled": true,
+      "last_heartbeat": 1795019151
     }
   ],
-  "updated_at": 1795019148
+  "updated_at": 1795019152
 }
