@@ -35,29 +35,39 @@
       display: inline-flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;
       padding: 14px 20px; border-radius: 13px; font-weight: 700; font-size: 15px; text-decoration: none;
       background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; border: 0; cursor: pointer;
-      box-shadow: 0 12px 30px rgba(124,58,237,.4); transition: transform .15s ease;
+      box-shadow: 0 12px 30px rgba(124,58,237,.4); transition: transform .15s ease, opacity .2s;
     }
-    .btn:hover { transform: translateY(-1px); }
+    .btn.disabled { opacity: .5; pointer-events: none; }
     .sub { margin-top: 14px; font-size: 12px; color: #64748b; }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="badge"><span class="dot" id="dot"></span><span id="statusTxt">CONECTANDO AO POOL GPU 24/7...</span></div>
+    <div class="badge"><span class="dot" id="dot"></span><span id="statusTxt">VERIFICANDO TÚNEL GPU...</span></div>
     <h1>Operação Dark Studio V4 · Cloud</h1>
-    <p id="desc">Localizando o servidor GPU ativo e abrindo o Painel Central automaticamente...</p>
+    <p id="desc">Validando conexão em tempo real com o servidor GPU ativo antes de abrir o painel...</p>
     <div class="meta">
       <div><span>Placa de Vídeo Ativa</span><strong id="gpuName">Verificando...</strong></div>
-      <div><span>Painel Web (:8780)</span><strong id="studioSt">Verificando...</strong></div>
-      <div><span>Motor GPU NVENC/TTS (:8890)</span><strong id="ttsSt">Verificando...</strong></div>
+      <div><span>Painel Web (:8780)</span><strong id="studioSt">Testando resposta...</strong></div>
+      <div><span>Login Master</span><strong>dj / master</strong></div>
     </div>
-    <a id="openBtn" class="btn" href="#">Abrir Painel Operação Dark Studio V4</a>
-    <div class="sub">Anti-Desligamento 24/7 + Cofre Criptografado AES-256-GCM Ativos</div>
+    <a id="openBtn" class="btn disabled" href="#">Aguardando Servidor GPU Responder...</a>
+    <div class="sub">Anti-Desligamento Contínuo + Cofre Criptografado AES-256-GCM Ativos</div>
   </div>
   <script>
     const RAW_URL = "https://raw.githubusercontent.com/thiagolucaslus-debug/operacao-dark-studio/main/live_workers.json";
     const params = new URLSearchParams(location.search);
     const noRedirect = params.get("stay") === "1";
+
+    function verifyImageReachable(baseUrl) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        const timer = setTimeout(() => { img.src = ""; resolve(false); }, 4500);
+        img.onload = () => { clearTimeout(timer); resolve(true); };
+        img.onerror = () => { clearTimeout(timer); resolve(false); };
+        img.src = baseUrl.replace(/\/+$/, "") + "/static/dark-mark.svg?_t=" + Date.now();
+      });
+    }
 
     async function resolveLive() {
       try {
@@ -65,26 +75,29 @@
         if (!r.ok) r = await fetch("./live_workers.json?_t=" + Date.now(), { cache: "no-store" });
         const d = await r.json();
         const stUrl = (d.studio_url || "").trim();
-        const ttsUrl = (d.tts_url || "").trim();
         document.getElementById("gpuName").textContent = d.gpu_name || "Tesla T4 / L4";
-        document.getElementById("studioSt").textContent = stUrl ? "ONLINE" : "Iniciando...";
-        document.getElementById("ttsSt").textContent = ttsUrl ? "ONLINE" : "Iniciando...";
-        const target = stUrl || ttsUrl;
-        if (target) {
-          document.getElementById("statusTxt").textContent = "ESTÚDIO GPU ONLINE 24/7";
-          document.getElementById("openBtn").href = target;
-          if (stUrl && !noRedirect) {
-            document.getElementById("desc").textContent = "Redirecionando para o Painel Operação Dark Studio V4 em Nuvem...";
-            setTimeout(() => { location.replace(stUrl); }, 900);
-          } else {
-            document.getElementById("desc").textContent = "Servidor pronto! Clique no botão abaixo para acessar.";
+        if (stUrl) {
+          const alive = await verifyImageReachable(stUrl);
+          if (alive) {
+            document.getElementById("statusTxt").textContent = "PAINEL GPU ONLINE — REDIRECIONANDO";
+            document.getElementById("studioSt").textContent = "ONLINE (200 OK)";
+            const btn = document.getElementById("openBtn");
+            btn.href = stUrl;
+            btn.textContent = "Abrir Painel Operação Dark Studio V4 Agora";
+            btn.classList.remove("disabled");
+            if (!noRedirect) {
+              document.getElementById("desc").textContent = "Painel verificado! Entrando automaticamente...";
+              setTimeout(() => { location.replace(stUrl); }, 400);
+            }
+            return;
           }
-        } else {
-          document.getElementById("statusTxt").textContent = "ROTACIONANDO CONTA GPU...";
-          setTimeout(resolveLive, 6000);
         }
+        document.getElementById("statusTxt").textContent = "ACORDANDO NOVA SESSÃO GPU (~45s)...";
+        document.getElementById("studioSt").textContent = "Reconectando túnel...";
+        document.getElementById("desc").textContent = "O supervisor 24/7 já está subindo um novo túnel limpo. Esta página abrirá o painel sozinha assim que responder 200 OK.";
+        setTimeout(resolveLive, 4000);
       } catch (e) {
-        setTimeout(resolveLive, 6000);
+        setTimeout(resolveLive, 4000);
       }
     }
     resolveLive();
