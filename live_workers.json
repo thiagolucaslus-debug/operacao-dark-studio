@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "online_workers": 1,
+  "studio_url": "https://electro-retrieved-performed-vernon.trycloudflare.com",
+  "tts_url": "https://lib-cathedral-consoles-travels.trycloudflare.com",
+  "gpu_name": "Tesla T4",
+  "tier": "pro",
+  "workers": [
+    {
+      "worker_id": "w_thiagoulucas122",
+      "studio_url": "https://electro-retrieved-performed-vernon.trycloudflare.com",
+      "tts_url": "https://lib-cathedral-consoles-travels.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "pro",
+      "studio_enabled": true,
+      "last_heartbeat": 1795008574
+    }
+  ],
+  "updated_at": 1795008576
+}
