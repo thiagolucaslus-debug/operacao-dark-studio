@@ -13,7 +13,7 @@
       "gpu_name": "NVIDIA L4",
       "tier": "pro",
       "studio_enabled": true,
-      "last_heartbeat": 1795019593
+      "last_heartbeat": 1795019621
     },
     {
       "worker_id": "w_colab_001",
@@ -25,5 +25,5 @@
       "last_heartbeat": 1795019151
     }
   ],
-  "updated_at": 1795019594
+  "updated_at": 1795019622
 }
