@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Painel Master 24/7 · Operação Dark Studio V4</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100dvh; display: grid; place-items: center; padding: 16px;
+      background: radial-gradient(ellipse at 25% 15%, rgba(139,92,246,.26), transparent 55%),
+                  radial-gradient(ellipse at 80% 85%, rgba(16,185,129,.16), transparent 50%), #06080f;
+      color: #f3f6fc; font-family: Inter, Segoe UI, system-ui, sans-serif;
+    }
+    .card {
+      width: min(540px, 100%); background: linear-gradient(160deg, #111728, #0a0e1a);
+      border: 1px solid rgba(167,139,250,.34); border-radius: 20px; padding: 28px 22px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.82); text-align: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px;
+      background: rgba(16,185,129,.13); border: 1px solid rgba(16,185,129,.4);
+      color: #6ee7b7; font-size: 11px; font-weight: 700; letter-spacing: .4px; margin-bottom: 14px;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 12px #10b981; flex-shrink: 0; }
+    h1 { margin: 0 0 9px; font-size: clamp(20px, 5vw, 24px); letter-spacing: -.4px; }
+    p { margin: 0 0 20px; color: #9fb0cc; font-size: 13.5px; line-height: 1.55; }
+    .meta {
+      background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 13px; padding: 12px 14px; margin-bottom: 20px; text-align: left; font-size: 12.5px; color: #cbd5e1;
+    }
+    .meta div { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .meta div:last-child { border-bottom: 0; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; width: 100%;
+      padding: 14px 18px; border-radius: 12px; font-weight: 700; font-size: 14.5px; text-decoration: none;
+      background: linear-gradient(135deg, #7c3aed, #2563eb); color: #fff; border: 0; cursor: pointer;
+      box-shadow: 0 12px 30px rgba(124,58,237,.4); transition: transform .15s ease, opacity .2s;
+    }
+    .btn.disabled { opacity: .5; pointer-events: none; }
+    .sub { margin-top: 13px; font-size: 11.5px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge"><span class="dot" id="dot"></span><span id="statusTxt">CONECTANDO AO SERVIDOR GPU...</span></div>
+    <h1>Painel Master · Operação Dark Studio V4</h1>
+    <p id="desc">Validando conexão em tempo real com o servidor GPU ativo antes de abrir o painel adaptável...</p>
+    <div class="meta">
+      <div><span>Placa de Vídeo Ativa</span><strong id="gpuName">Verificando...</strong></div>
+      <div><span>Servidor Cloud (:8780)</span><strong id="studioSt">Testando resposta...</strong></div>
+      <div><span>Modo de Tela</span><strong>Adaptável (PC · Tablet · Celular)</strong></div>
+    </div>
+    <a id="openBtn" class="btn disabled" href="#">Aguardando Servidor GPU Responder...</a>
+    <div class="sub">Operação Contínua 24/7 · Cofre Criptografado AES-256-GCM</div>
+  </div>
+  <script>
+    const RAW_URL = "https://raw.githubusercontent.com/thiagolucaslus-debug/operacao-dark-studio/main/live_workers.json";
+    const LOCAL_JSON = "../live_workers.json";
+    const FORCE_MASTER = true;
+    const params = new URLSearchParams(location.search);
+    const noRedirect = params.get("stay") === "1";
+    const wantsMaster = FORCE_MASTER || params.get("master") === "1" || location.hash === "#master";
+
+    function verifyImageReachable(baseUrl) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        const timer = setTimeout(() => { img.src = ""; resolve(false); }, 4500);
+        img.onload = () => { clearTimeout(timer); resolve(true); };
+        img.onerror = () => { clearTimeout(timer); resolve(false); };
+        img.src = baseUrl.replace(/\/+$/, "") + "/static/dark-mark.svg?_t=" + Date.now();
+      });
+    }
+
+    async function resolveLive() {
+      try {
+        let r = await fetch(RAW_URL + "?_t=" + Date.now(), { cache: "no-store" });
+        if (!r.ok) r = await fetch(LOCAL_JSON + "?_t=" + Date.now(), { cache: "no-store" });
+        const d = await r.json();
+        const stUrl = (d.studio_url || "").trim().replace(/\/+$/, "");
+        document.getElementById("gpuName").textContent = d.gpu_name || "Tesla T4 / L4";
+        if (stUrl) {
+          const alive = await verifyImageReachable(stUrl);
+          if (alive) {
+            const finalUrl = wantsMaster ? (stUrl + "/master#master") : stUrl;
+            document.getElementById("statusTxt").textContent = "SERVIDOR ONLINE — ABRINDO PAINEL";
+            document.getElementById("studioSt").textContent = "ONLINE (200 OK)";
+            const btn = document.getElementById("openBtn");
+            btn.href = finalUrl;
+            btn.textContent = "Abrir Painel Master Agora";
+            btn.classList.remove("disabled");
+            if (!noRedirect) {
+              document.getElementById("desc").textContent = "Conexão confirmada! Abrindo o painel...";
+              setTimeout(() => { location.replace(finalUrl); }, 300);
+            }
+            return;
+          }
+        }
+        document.getElementById("statusTxt").textContent = "ACORDANDO SESSÃO GPU (~40s)...";
+        document.getElementById("studioSt").textContent = "Reconectando túnel...";
+        document.getElementById("desc").textContent = "O supervisor 24/7 está renovando o túnel seguro. Esta página abrirá o painel automaticamente assim que responder 200 OK.";
+        setTimeout(resolveLive, 4000);
+      } catch (e) {
+        setTimeout(resolveLive, 4000);
+      }
+    }
+    resolveLive();
+  </script>
+</body>
+</html>
