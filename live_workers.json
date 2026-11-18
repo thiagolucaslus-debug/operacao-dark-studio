@@ -1,10 +1,20 @@
 {
   "ok": true,
-  "online_workers": 0,
-  "studio_url": "",
-  "tts_url": "",
-  "gpu_name": "",
-  "tier": "",
-  "workers": [],
-  "updated_at": 1795018921
+  "online_workers": 1,
+  "studio_url": "https://spare-strange-club-within.trycloudflare.com",
+  "tts_url": "https://thesaurus-returning-healing-eat.trycloudflare.com",
+  "gpu_name": "NVIDIA L4",
+  "tier": "pro",
+  "workers": [
+    {
+      "worker_id": "w_historiano17",
+      "studio_url": "https://spare-strange-club-within.trycloudflare.com",
+      "tts_url": "https://thesaurus-returning-healing-eat.trycloudflare.com",
+      "gpu_name": "NVIDIA L4",
+      "tier": "pro",
+      "studio_enabled": true,
+      "last_heartbeat": 1795018989
+    }
+  ],
+  "updated_at": 1795018991
 }
