@@ -1,20 +1,20 @@
 {
   "ok": true,
   "online_workers": 1,
-  "studio_url": "https://saved-finder-shortcuts-platinum.trycloudflare.com",
-  "tts_url": "https://empire-organizational-easily-combination.trycloudflare.com",
+  "studio_url": "https://category-relating-introduces-focused.trycloudflare.com",
+  "tts_url": "https://police-sides-grateful-beneath.trycloudflare.com",
   "gpu_name": "Tesla T4",
   "tier": "pro",
   "workers": [
     {
-      "worker_id": "w_colab_002",
-      "studio_url": "https://saved-finder-shortcuts-platinum.trycloudflare.com",
-      "tts_url": "https://empire-organizational-easily-combination.trycloudflare.com",
+      "worker_id": "w_thiagoulucas123",
+      "studio_url": "https://category-relating-introduces-focused.trycloudflare.com",
+      "tts_url": "https://police-sides-grateful-beneath.trycloudflare.com",
       "gpu_name": "Tesla T4",
       "tier": "pro",
       "studio_enabled": true,
-      "last_heartbeat": 1795010523
+      "last_heartbeat": 1795010537
     }
   ],
-  "updated_at": 1795010524
+  "updated_at": 1795010539
 }
