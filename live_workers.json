@@ -1,20 +1,10 @@
 {
   "ok": true,
-  "online_workers": 1,
-  "studio_url": "https://nokia-bits-democratic-minnesota.trycloudflare.com",
-  "tts_url": "https://accounts-neural-means-proposition.trycloudflare.com",
-  "gpu_name": "Tesla T4",
-  "tier": "free",
-  "workers": [
-    {
-      "worker_id": "w_thiagoulucas121",
-      "studio_url": "https://nokia-bits-democratic-minnesota.trycloudflare.com",
-      "tts_url": "https://accounts-neural-means-proposition.trycloudflare.com",
-      "gpu_name": "Tesla T4",
-      "tier": "free",
-      "studio_enabled": true,
-      "last_heartbeat": 1795120284
-    }
-  ],
-  "updated_at": 1795120307
+  "online_workers": 0,
+  "studio_url": "",
+  "tts_url": "",
+  "gpu_name": "",
+  "tier": "",
+  "workers": [],
+  "updated_at": 1795120378
 }
