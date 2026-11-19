@@ -4,17 +4,17 @@
   "studio_url": "https://corresponding-nominations-enters-advanced.trycloudflare.com",
   "tts_url": "https://spies-grill-hello-communications.trycloudflare.com",
   "gpu_name": "Tesla T4",
-  "tier": "free",
+  "tier": "pro",
   "workers": [
     {
       "worker_id": "w_colab_002",
       "studio_url": "https://corresponding-nominations-enters-advanced.trycloudflare.com",
       "tts_url": "https://spies-grill-hello-communications.trycloudflare.com",
       "gpu_name": "Tesla T4",
-      "tier": "free",
+      "tier": "pro",
       "studio_enabled": true,
-      "last_heartbeat": 1795122276
+      "last_heartbeat": 1795122287
     }
   ],
-  "updated_at": 1795122279
+  "updated_at": 1795122288
 }
