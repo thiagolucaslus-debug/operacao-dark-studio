@@ -1,20 +1,10 @@
 {
   "ok": true,
-  "online_workers": 1,
-  "studio_url": "https://small-flour-dice-improve.trycloudflare.com",
-  "tts_url": "https://witch-corpus-benefits-soma.trycloudflare.com",
-  "gpu_name": "NVIDIA L4",
-  "tier": "pro",
-  "workers": [
-    {
-      "worker_id": "w_colab_004",
-      "studio_url": "https://small-flour-dice-improve.trycloudflare.com",
-      "tts_url": "https://witch-corpus-benefits-soma.trycloudflare.com",
-      "gpu_name": "NVIDIA L4",
-      "tier": "pro",
-      "studio_enabled": true,
-      "last_heartbeat": 1795063598
-    }
-  ],
-  "updated_at": 1795063599
+  "online_workers": 0,
+  "studio_url": "",
+  "tts_url": "",
+  "gpu_name": "",
+  "tier": "",
+  "workers": [],
+  "updated_at": 1795063627
 }
