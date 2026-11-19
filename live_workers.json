@@ -1,20 +1,10 @@
 {
   "ok": true,
-  "online_workers": 1,
-  "studio_url": "https://presence-forbes-signing-respondents.trycloudflare.com",
-  "tts_url": "https://roles-combo-processor-affected.trycloudflare.com",
-  "gpu_name": "NVIDIA L4",
-  "tier": "pro",
-  "workers": [
-    {
-      "worker_id": "w_colab_004",
-      "studio_url": "https://presence-forbes-signing-respondents.trycloudflare.com",
-      "tts_url": "https://roles-combo-processor-affected.trycloudflare.com",
-      "gpu_name": "NVIDIA L4",
-      "tier": "pro",
-      "studio_enabled": true,
-      "last_heartbeat": 1795067045
-    }
-  ],
-  "updated_at": 1795067046
+  "online_workers": 0,
+  "studio_url": "",
+  "tts_url": "",
+  "gpu_name": "",
+  "tier": "",
+  "workers": [],
+  "updated_at": 1795067078
 }
