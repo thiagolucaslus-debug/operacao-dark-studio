@@ -1,10 +1,20 @@
 {
   "ok": true,
-  "online_workers": 0,
-  "studio_url": "",
-  "tts_url": "",
-  "gpu_name": "",
-  "tier": "",
-  "workers": [],
-  "updated_at": 1795126973
+  "online_workers": 1,
+  "studio_url": "https://needed-agent-budget-whether.trycloudflare.com",
+  "tts_url": "https://socket-skills-meant-swap.trycloudflare.com",
+  "gpu_name": "Tesla T4",
+  "tier": "pro",
+  "workers": [
+    {
+      "worker_id": "w_colab_002",
+      "studio_url": "https://needed-agent-budget-whether.trycloudflare.com",
+      "tts_url": "https://socket-skills-meant-swap.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "pro",
+      "studio_enabled": true,
+      "last_heartbeat": 1795127177
+    }
+  ],
+  "updated_at": 1795127178
 }
