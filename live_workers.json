@@ -1,20 +1,20 @@
 {
   "ok": true,
   "online_workers": 1,
-  "studio_url": "https://hazardous-explains-fell-feb.trycloudflare.com",
-  "tts_url": "https://bless-rep-mid-strategic.trycloudflare.com",
-  "gpu_name": "NVIDIA L4",
-  "tier": "pro",
+  "studio_url": "https://some-poems-low-consistency.trycloudflare.com",
+  "tts_url": "https://extraordinary-discharge-policies-workplace.trycloudflare.com",
+  "gpu_name": "Tesla T4",
+  "tier": "free",
   "workers": [
     {
-      "worker_id": "w_colab_004",
-      "studio_url": "https://hazardous-explains-fell-feb.trycloudflare.com",
-      "tts_url": "https://bless-rep-mid-strategic.trycloudflare.com",
-      "gpu_name": "NVIDIA L4",
-      "tier": "pro",
+      "worker_id": "w_colab_005",
+      "studio_url": "https://some-poems-low-consistency.trycloudflare.com",
+      "tts_url": "https://extraordinary-discharge-policies-workplace.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "free",
       "studio_enabled": true,
-      "last_heartbeat": 1795116315
+      "last_heartbeat": 1795117169
     }
   ],
-  "updated_at": 1795116316
+  "updated_at": 1795117170
 }
