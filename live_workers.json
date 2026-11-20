@@ -1,20 +1,10 @@
 {
   "ok": true,
-  "online_workers": 1,
-  "studio_url": "https://maybe-touched-greene-les.trycloudflare.com",
-  "tts_url": "https://deliver-outlined-grab-got.trycloudflare.com",
-  "gpu_name": "NVIDIA L4",
-  "tier": "pro",
-  "workers": [
-    {
-      "worker_id": "w_historiano17",
-      "studio_url": "https://maybe-touched-greene-les.trycloudflare.com",
-      "tts_url": "https://deliver-outlined-grab-got.trycloudflare.com",
-      "gpu_name": "NVIDIA L4",
-      "tier": "pro",
-      "studio_enabled": true,
-      "last_heartbeat": 1795149731
-    }
-  ],
-  "updated_at": 1795149733
+  "online_workers": 0,
+  "studio_url": "",
+  "tts_url": "",
+  "gpu_name": "",
+  "tier": "",
+  "workers": [],
+  "updated_at": 1795215781
 }
