@@ -1,10 +1,20 @@
 {
   "ok": true,
-  "online_workers": 0,
-  "studio_url": "",
-  "tts_url": "",
-  "gpu_name": "",
-  "tier": "",
-  "workers": [],
-  "updated_at": 1795136055
+  "online_workers": 1,
+  "studio_url": "https://rentals-needle-daisy-enhancement.trycloudflare.com",
+  "tts_url": "https://strategic-wildlife-formerly-tags.trycloudflare.com",
+  "gpu_name": "Tesla T4",
+  "tier": "free",
+  "workers": [
+    {
+      "worker_id": "w_colab_001",
+      "studio_url": "https://rentals-needle-daisy-enhancement.trycloudflare.com",
+      "tts_url": "https://strategic-wildlife-formerly-tags.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "free",
+      "studio_enabled": true,
+      "last_heartbeat": 1795136116
+    }
+  ],
+  "updated_at": 1795136117
 }
