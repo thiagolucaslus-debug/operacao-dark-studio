@@ -1,20 +1,20 @@
 {
   "ok": true,
   "online_workers": 1,
-  "studio_url": "https://rentals-needle-daisy-enhancement.trycloudflare.com",
-  "tts_url": "https://strategic-wildlife-formerly-tags.trycloudflare.com",
-  "gpu_name": "Tesla T4",
-  "tier": "free",
+  "studio_url": "https://maybe-touched-greene-les.trycloudflare.com",
+  "tts_url": "https://deliver-outlined-grab-got.trycloudflare.com",
+  "gpu_name": "NVIDIA L4",
+  "tier": "pro",
   "workers": [
     {
-      "worker_id": "w_colab_001",
-      "studio_url": "https://rentals-needle-daisy-enhancement.trycloudflare.com",
-      "tts_url": "https://strategic-wildlife-formerly-tags.trycloudflare.com",
-      "gpu_name": "Tesla T4",
-      "tier": "free",
+      "worker_id": "w_historiano17",
+      "studio_url": "https://maybe-touched-greene-les.trycloudflare.com",
+      "tts_url": "https://deliver-outlined-grab-got.trycloudflare.com",
+      "gpu_name": "NVIDIA L4",
+      "tier": "pro",
       "studio_enabled": true,
-      "last_heartbeat": 1795138451
+      "last_heartbeat": 1795143826
     }
   ],
-  "updated_at": 1795138452
+  "updated_at": 1795143828
 }
