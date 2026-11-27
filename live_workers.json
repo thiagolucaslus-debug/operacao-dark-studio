@@ -1,20 +1,10 @@
 {
   "ok": true,
-  "online_workers": 1,
-  "studio_url": "https://field-balance-music-dreams.trycloudflare.com",
-  "tts_url": "https://riverside-aurora-ranking-demo.trycloudflare.com",
-  "gpu_name": "Tesla T4",
-  "tier": "pro",
-  "workers": [
-    {
-      "worker_id": "w_colab_003",
-      "studio_url": "https://field-balance-music-dreams.trycloudflare.com",
-      "tts_url": "https://riverside-aurora-ranking-demo.trycloudflare.com",
-      "gpu_name": "Tesla T4",
-      "tier": "pro",
-      "studio_enabled": true,
-      "last_heartbeat": 1795794818
-    }
-  ],
-  "updated_at": 1795794820
+  "online_workers": 0,
+  "studio_url": "",
+  "tts_url": "",
+  "gpu_name": "",
+  "tier": "",
+  "workers": [],
+  "updated_at": 1795820713
 }
