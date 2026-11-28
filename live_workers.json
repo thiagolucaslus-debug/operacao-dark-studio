@@ -1,10 +1,20 @@
 {
   "ok": true,
-  "online_workers": 0,
-  "studio_url": "",
-  "tts_url": "",
-  "gpu_name": "",
-  "tier": "",
-  "workers": [],
-  "updated_at": 1795834772
+  "online_workers": 1,
+  "studio_url": "https://healing-kernel-shanghai-golden.trycloudflare.com",
+  "tts_url": "https://coordinator-mike-decide-barrel.trycloudflare.com",
+  "gpu_name": "Tesla T4",
+  "tier": "pro",
+  "workers": [
+    {
+      "worker_id": "w_colab_002",
+      "studio_url": "https://healing-kernel-shanghai-golden.trycloudflare.com",
+      "tts_url": "https://coordinator-mike-decide-barrel.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "pro",
+      "studio_enabled": true,
+      "last_heartbeat": 1795834858
+    }
+  ],
+  "updated_at": 1795834860
 }
