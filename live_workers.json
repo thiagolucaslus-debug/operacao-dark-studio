@@ -1,10 +1,20 @@
 {
   "ok": true,
-  "online_workers": 0,
-  "studio_url": "",
-  "tts_url": "",
-  "gpu_name": "",
-  "tier": "",
-  "workers": [],
-  "updated_at": 1795827750
+  "online_workers": 1,
+  "studio_url": "https://bob-ash-collaboration-payment.trycloudflare.com",
+  "tts_url": "https://premiere-expenditures-cure-projects.trycloudflare.com",
+  "gpu_name": "Tesla T4",
+  "tier": "pro",
+  "workers": [
+    {
+      "worker_id": "w_thiagoulucas123",
+      "studio_url": "https://bob-ash-collaboration-payment.trycloudflare.com",
+      "tts_url": "https://premiere-expenditures-cure-projects.trycloudflare.com",
+      "gpu_name": "Tesla T4",
+      "tier": "pro",
+      "studio_enabled": true,
+      "last_heartbeat": 1795827770
+    }
+  ],
+  "updated_at": 1795827772
 }
