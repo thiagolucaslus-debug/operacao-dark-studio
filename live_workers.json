@@ -1,20 +1,10 @@
 {
   "ok": true,
-  "online_workers": 1,
-  "studio_url": "https://combined-neither-sink-recovery.trycloudflare.com",
-  "tts_url": "https://condition-consecutive-conclude-came.trycloudflare.com",
-  "gpu_name": "Tesla T4",
-  "tier": "pro",
-  "workers": [
-    {
-      "worker_id": "w_thiagoulucas122",
-      "studio_url": "https://combined-neither-sink-recovery.trycloudflare.com",
-      "tts_url": "https://condition-consecutive-conclude-came.trycloudflare.com",
-      "gpu_name": "Tesla T4",
-      "tier": "pro",
-      "studio_enabled": true,
-      "last_heartbeat": 1795823007
-    }
-  ],
-  "updated_at": 1795823009
+  "online_workers": 0,
+  "studio_url": "",
+  "tts_url": "",
+  "gpu_name": "",
+  "tier": "",
+  "workers": [],
+  "updated_at": 1795825412
 }
